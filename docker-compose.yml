@@ -1,0 +1,25 @@
+version: "3"
+services:
+  postgresdb:
+    image: postgres
+    volumes:
+      - postgresdb_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: speedway_db
+    ports:
+      - "5433:5432"
+  speedway:
+    build: .
+    environment:
+      DB_HOST: postgresdb
+      DB_USER: postgres
+      DB_PASSWORD: password
+      DB_NAME: speedway_db
+    depends_on:
+      - postgresdb
+    ports:
+      - "8300:8080"
+
+volumes:
+  postgresdb_volume: {}

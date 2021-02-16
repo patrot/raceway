@@ -1,0 +1,1 @@
+INSERT INTO RACE_CAR ( nick_name, model, year, owner, status, top_speed) VALUES ( 'The Condor', 'Corvette', 2019, 27, 'AVAILABLE', 189);
