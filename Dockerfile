@@ -1,7 +1,8 @@
 # Multi-stage Build
 
 # Stage 1: Build .jar
-FROM openjdk:11.0-jdk-slim as builder
+#FROM openjdk:11.0-jdk-slim as builder
+#FROM openjdk:11.0-jdk-slim as builder
 VOLUME /tmp
 COPY . .
 RUN chmod +x ./gradlew
